@@ -26,7 +26,7 @@ namespace WorkOrganizerApp
                 }
                 MainPage = new NavigationPage(new DashboardPage());
             }
-            else if (!string.IsNullOrEmpty(PreferenceSettings.Email)
+            else if (!string.IsNullOrEmpty(PreferenceSettings.Username)
                      && !string.IsNullOrEmpty(PreferenceSettings.Password))
             {
                 MainPage = new NavigationPage(new LoginPage());

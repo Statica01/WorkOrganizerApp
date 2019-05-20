@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using Xamarin.Essentials;
 
 namespace WorkOrganizerApp.Helpers
@@ -16,7 +14,7 @@ namespace WorkOrganizerApp.Helpers
 
         public static string RefreshToken
         {
-            get => Xamarin.Essentials.Preferences.Get(nameof(RefreshToken), "");
+            get => Preferences.Get(nameof(RefreshToken), "");
             set => Preferences.Set(nameof(RefreshToken), value);
         }
 
@@ -36,10 +34,10 @@ namespace WorkOrganizerApp.Helpers
 
         }
 
-        public static string Email
+        public static string Username
         {
-            get => Xamarin.Essentials.Preferences.Get(nameof(Email), ""); //... ,string.Empty);
-            set => Xamarin.Essentials.Preferences.Set(nameof(Email), value);
+            get => Xamarin.Essentials.Preferences.Get(nameof(Username), ""); //... ,string.Empty);
+            set => Xamarin.Essentials.Preferences.Set(nameof(Username), value);
         }
 
         public static string Password

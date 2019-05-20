@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using WorkOrganizerApp.Helpers;
 using WorkOrganizerApp.Models;
@@ -47,8 +45,8 @@ namespace WorkOrganizerApp.ViewModels
                 return new Command(() =>
                 {
                     PreferenceSettings.Token = string.Empty;
-                    Debug.WriteLine(PreferenceSettings.Email);
-                    PreferenceSettings.Email = string.Empty;
+                    Debug.WriteLine(PreferenceSettings.Username);
+                    PreferenceSettings.Username = string.Empty;
                     Debug.WriteLine(PreferenceSettings.Password);
                     PreferenceSettings.Password = string.Empty;
 

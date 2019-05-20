@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using WorkOrganizerApp.Helpers;
 using WorkOrganizerApp.Services;
 using Xamarin.Forms;
@@ -13,6 +10,7 @@ namespace WorkOrganizerApp.ViewModels
 
         private readonly LoginApiService _loginApiService = new LoginApiService();
 
+        public string Username { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string SocialSecurityNumber { get; set; }
@@ -27,9 +25,9 @@ namespace WorkOrganizerApp.ViewModels
                 return new Command(async () =>
                 {
                     var isRegistered = await _loginApiService.SignUpUserAsync
-                        (Firstname, Lastname, SocialSecurityNumber, Email, Password);
+                        (Username, Firstname, Lastname, SocialSecurityNumber, Email, Password);
 
-                    PreferenceSettings.Email = Email;
+                    PreferenceSettings.Username = Username;
                     PreferenceSettings.Password = Password;
 
                     if (isRegistered)

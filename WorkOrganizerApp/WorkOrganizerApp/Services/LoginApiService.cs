@@ -16,17 +16,17 @@ namespace WorkOrganizerApp.Services
 {
     internal class LoginApiService
     {
-        public async Task<string> LoginAsync(string userName, string password)
+        public async Task<string> LoginAsync(string username, string password)
         {
             var keyValues = new List<KeyValuePair<string, string>>
             {
-                new KeyValuePair<string, string>("username", userName),
+                new KeyValuePair<string, string>("username", username),
                 new KeyValuePair<string, string>("password", password),
-                new KeyValuePair<string, string>("grant_type", "password")
+               // new KeyValuePair<string, string>("grant_type", "password")
             };
 
             var request = new HttpRequestMessage(
-                HttpMethod.Post, Constants.BaseApiAddress + "Token");
+                HttpMethod.Post, Constants.BaseApiAddress + "/token");
 
             request.Content = new FormUrlEncodedContent(keyValues);
 
@@ -49,13 +49,14 @@ namespace WorkOrganizerApp.Services
             return accessToken;
         }
 
-        public async Task<bool> SignUpUserAsync(string firstname, string lastname, string socialSecurityNumber,
+        public async Task<bool> SignUpUserAsync(string username, string firstname, string lastname, string socialSecurityNumber,
             string email, string password)
         {
             var client = new HttpClient();
 
             var model = new User
             {
+                Username = username,
                 Firstname = firstname,
                 Lastname = lastname,
                 SocialSecurityNumber = socialSecurityNumber,
@@ -71,7 +72,7 @@ namespace WorkOrganizerApp.Services
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = await client.PostAsync(
-                Constants.BaseApiAddress + "api/Account/SignUp", httpContent);
+                Constants.BaseApiAddress + "/users", httpContent);
 
             if (response.IsSuccessStatusCode)
             {
@@ -88,8 +89,8 @@ namespace WorkOrganizerApp.Services
                 return new Command(() =>
                 {
                     PreferenceSettings.Token = string.Empty;
-                    Debug.WriteLine(PreferenceSettings.Email);
-                    PreferenceSettings.Email = string.Empty;
+                    Debug.WriteLine(PreferenceSettings.Username);
+                    PreferenceSettings.Username = string.Empty;
                     Debug.WriteLine(PreferenceSettings.Password);
                     PreferenceSettings.Password = string.Empty;
 

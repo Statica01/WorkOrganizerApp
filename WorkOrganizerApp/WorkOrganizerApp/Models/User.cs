@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WorkOrganizerApp.Models
+﻿namespace WorkOrganizerApp.Models
 {
     public class User
     {
