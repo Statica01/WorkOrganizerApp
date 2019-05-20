@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:WorkOrganizerApp.ViewModels;assembly=WorkOrganizerApp"
+             x:Class="WorkOrganizerApp.Views.DashboardPage"
+             Title="All Projects">
+
+    <ContentPage.BindingContext>
+        <viewModels:DashboardViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}"
+                     Clicked="LogoutMenuItem_Clicked"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+
+        <!--<Entry Text="{Binding AccessToken}" />-->
+
+        <Button Command="{Binding GetProjectsCommand}"
+                Text="Get All Projects"
+                TextColor="White"
+                FontSize="30"/>
+
+        <Button Text="Add new Project"
+                Clicked="NavigateToAddNewProject_Clicked"
+                TextColor="White"
+                FontSize="30"/>
+
+        <Button Text="Search Projects"
+                Clicked="NavigateToSearchProject_Clicked"
+                TextColor="White"
+                FontSize="30"/>
+
+        <ListView ItemsSource="{Binding Projects}"
+                  HasUnevenRows="True"
+                  ItemTapped="ProjectListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0,10">
+                            <Label Text="{Binding Name}"
+                                   FontSize="24"/>
+                            <Label Text="{Binding StartDate}" />
+                            <Label Text="{Binding EndDate}" />
+                            <Label Text="{Binding Description}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

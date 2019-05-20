@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:WorkOrganizerApp.ViewModels;assembly=WorkOrganizerApp"
+             x:Class="WorkOrganizerApp.Views.SignUpPage"
+             Title="Sign Up">
+
+    <ContentPage.BindingContext>
+        <viewModels:SignUpViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="StartAndExpand">
+        <Label Text="Firstname" />
+        <Entry Text="{Binding Firstname}" Placeholder="firstname" />
+        <Label Text="Lastname" />
+        <Entry Text="{Binding Lastname}" Placeholder="lastname" />
+        <Label Text="SSN" />
+        <Entry Text="{Binding SocialSecurityNumber}" Placeholder="socialSecurityNumberEntry" />
+        <Label Text="Password" />
+        <Entry Text="{Binding Password}" Placeholder="password" IsPassword="true" />
+        <Label Text="Email address" />
+        <Entry Text="{Binding Email}" Placeholder="Email adress" />
+        <Button Command="{Binding OnSignUpButtonClicked}" 
+                Text="Sign Up" />
+        <!--    Clicked="OnSignUpButtonClicked" -->
+      
+        <Label Text="{Binding Message}"
+               HorizontalOptions="Center"/>
+        <Button Text="Go to Login"
+                Clicked="Button_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

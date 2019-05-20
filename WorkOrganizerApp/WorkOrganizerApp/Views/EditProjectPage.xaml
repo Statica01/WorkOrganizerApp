@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:WorkOrganizerApp.ViewModels;assembly=WorkOrganizerApp"
+             x:Class="WorkOrganizerApp.Views.EditProjectPage"
+             Title="Edit project">
+    <ContentPage.BindingContext>
+        <viewModels:EditProjectViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Entry Text="{Binding Project.Name}" />
+        <Entry Text="{Binding Project.StartDate}" />
+        <Entry Text="{Binding Project.EndDate}" />
+        <Entry Text="{Binding Project.Description}" />
+      
+
+        <Button Command="{Binding EditCommand}"
+                Text="Edit Project" />
+
+        <Button Command="{Binding DeleteCommand}"
+                Text="Delete Project" />
+
+    </StackLayout>
+</ContentPage>

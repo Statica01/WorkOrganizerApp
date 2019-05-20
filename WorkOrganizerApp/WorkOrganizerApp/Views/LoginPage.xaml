@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:viewModels="clr-namespace:WorkOrganizerApp.ViewModels"
+             x:Class="WorkOrganizerApp.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout VerticalOptions="StartAndExpand">
+        <Label Text="Work Organizer"
+                   FontSize="40" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        <Label Text="Please Login"/>
+        <Label Text="Username"/>
+        <Entry x:Name="usernameEntry" Placeholder="username" />
+        <Label Text="Password" />
+        <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
+        <Button Text="Login" Clicked="NavigateToDashboardPage_OnClicked" />
+        <Label x:Name="messageLabel" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+       <!-- <Label Text="No account yet? "/>
+
+        <Button Command="{Binding OnSignUpButtonClicked}" 
+                Text="Sign Up"
+                VerticalOptions="Center"/>
+
+        <Button Text="About Us" Clicked="OnAboutUsButtonClicked"/> -->
+    </StackLayout>
+
+</ContentPage>

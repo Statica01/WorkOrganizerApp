@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Workspace\\ECUtbildning\\.net\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Workspace\\ECUtbildning\\.net\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Workspace\\ECUtbildning\\.net\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp.csproj",
+        "projectName": "WorkOrganizerApp",
+        "projectPath": "C:\\Workspace\\ECUtbildning\\.net\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp.csproj",
+        "packagesPath": "C:\\Users\\someone\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspace\\ECUtbildning\\.net\\WorkOrganizerApp\\WorkOrganizerApp\\WorkOrganizerApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\someone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[3.6.0.264807, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

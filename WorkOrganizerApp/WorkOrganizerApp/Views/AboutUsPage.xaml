@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkOrganizerApp.Views.AboutUsPage" Title="Back to start">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="About Work Organizer"
+                   FontSize="20" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies volutpat vestibulum. 
+                Nullam facilisis posuere mi et vulputate. Maecenas nec elit ut risus imperdiet iaculis. 
+                Cras tempor semper odio sed condimentum. 
+                Mauris cursus augue in ligula ultrices, ac porta turpis fringilla." 
+                  
+                   HorizontalOptions="Center" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
