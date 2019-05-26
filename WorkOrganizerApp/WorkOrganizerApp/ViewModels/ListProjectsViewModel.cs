@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using WorkOrganizerApp.Helpers;
 using WorkOrganizerApp.Models;
@@ -11,6 +8,8 @@ using WorkOrganizerApp.Services;
 using Xamarin.Forms;
 
 namespace WorkOrganizerApp.ViewModels
+
+// TODO List all jobs included in a project. <=========================================== TODO !
 {
     public class ListProjectsViewModel : INotifyPropertyChanged
     {
@@ -21,7 +20,7 @@ namespace WorkOrganizerApp.ViewModels
         //public string AccessToken { get; set; }
         public List<Project> Projects
         {
-            get { return _projects; }
+            get => _projects;
             set
             {
                 _projects = value;

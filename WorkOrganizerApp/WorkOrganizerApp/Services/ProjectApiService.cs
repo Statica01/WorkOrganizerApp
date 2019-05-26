@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WorkOrganizerApp.Models;
@@ -11,6 +9,7 @@ namespace WorkOrganizerApp.Services
 {
     internal class ProjectApiService
     {
+        //TODO Link in project list = See Project details page. GetProjectById
 
         public async Task<List<Project>> GetProjectsAsync(string accessToken)
         {
@@ -18,7 +17,7 @@ namespace WorkOrganizerApp.Services
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Bearer", accessToken);
 
-            var json = await client.GetStringAsync(Constants.BaseApiAddress + "api/projects");
+            var json = await client.GetStringAsync(Constants.BaseApiAddress + "/projects");
 
             var projects = JsonConvert.DeserializeObject<List<Project>>(json);
 
@@ -34,7 +33,7 @@ namespace WorkOrganizerApp.Services
             HttpContent content = new StringContent(json);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            var response = await client.PostAsync(Constants.BaseApiAddress + "api/Projects", content);
+            var response = await client.PostAsync(Constants.BaseApiAddress + "/projects", content);
         }
 
         public async Task EditProjectAsync(Project project, string accessToken)
@@ -47,7 +46,7 @@ namespace WorkOrganizerApp.Services
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = await client.PutAsync(
-                Constants.BaseApiAddress + "api/Ideas/" + project.Id, content);
+                Constants.BaseApiAddress + "/projects/" + project.Id, content);
         }
 
         public async Task DeleteProjectAsync(int projectId, string accessToken)
@@ -56,7 +55,7 @@ namespace WorkOrganizerApp.Services
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await client.DeleteAsync(
-                Constants.BaseApiAddress + "api/projects/" + projectId);
+                Constants.BaseApiAddress + "/projects/" + projectId);
         }
 
         public async Task<List<Project>> SearchProjectsAsync(string keyword, string accessToken)
@@ -66,7 +65,7 @@ namespace WorkOrganizerApp.Services
                 "Bearer", accessToken);
 
             var json = await client.GetStringAsync(
-                Constants.BaseApiAddress + "api/projects/Search/" + keyword);
+                Constants.BaseApiAddress + "/projects/Search/" + keyword);
 
             var projects = JsonConvert.DeserializeObject<List<Project>>(json);
 

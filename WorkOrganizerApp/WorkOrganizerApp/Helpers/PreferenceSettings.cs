@@ -34,12 +34,17 @@ namespace WorkOrganizerApp.Helpers
 
         }
 
-        public static string Username
+        public static string Email
         {
-            get => Xamarin.Essentials.Preferences.Get(nameof(Username), ""); //... ,string.Empty);
-            set => Xamarin.Essentials.Preferences.Set(nameof(Username), value);
+            get => Xamarin.Essentials.Preferences.Get(nameof(Email), ""); //... ,string.Empty);
+            set => Xamarin.Essentials.Preferences.Set(nameof(Email), value);
         }
 
+        public static string Username
+        {
+            get => Preferences.Get(nameof(Username), ""); //... ,string.Empty);
+            set => Preferences.Set(nameof(Username), value);
+        }
         public static string Password
         {
             get => Xamarin.Essentials.Preferences.Get(nameof(Password), "");

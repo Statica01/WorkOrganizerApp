@@ -10,12 +10,13 @@ namespace WorkOrganizerApp.ViewModels
 
         private readonly LoginApiService _loginApiService = new LoginApiService();
 
-        public string Username { get; set; }
+        public string Name { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string SocialSecurityNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public string Message { get; set; }
 
         public ICommand OnSignUpButtonClicked //SignUpCommand
@@ -25,9 +26,9 @@ namespace WorkOrganizerApp.ViewModels
                 return new Command(async () =>
                 {
                     var isRegistered = await _loginApiService.SignUpUserAsync
-                        (Username, Firstname, Lastname, SocialSecurityNumber, Email, Password);
+                        (Name, Firstname, Lastname, SocialSecurityNumber, Email, Password, ConfirmPassword);
 
-                    PreferenceSettings.Username = Username;
+                    PreferenceSettings.Username = Email;
                     PreferenceSettings.Password = Password;
 
                     if (isRegistered)

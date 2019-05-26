@@ -9,7 +9,10 @@
         <viewModels:SignUpViewModel />
     </ContentPage.BindingContext>
 
+    <ScrollView>
     <StackLayout VerticalOptions="StartAndExpand">
+        <Label Text="Title (Admin or User)" />
+        <Entry Text="{Binding Name}" Placeholder="name" />
         <Label Text="Firstname" />
         <Entry Text="{Binding Firstname}" Placeholder="firstname" />
         <Label Text="Lastname" />
@@ -18,6 +21,8 @@
         <Entry Text="{Binding SocialSecurityNumber}" Placeholder="socialSecurityNumberEntry" />
         <Label Text="Password" />
         <Entry Text="{Binding Password}" Placeholder="password" IsPassword="true" />
+        <Label Text="Confirm Password" />
+        <Entry Text="{Binding ConfirmPassword}" Placeholder="password" IsPassword="true" />
         <Label Text="Email address" />
         <Entry Text="{Binding Email}" Placeholder="Email adress" />
         <Button Command="{Binding OnSignUpButtonClicked}" 
@@ -29,5 +34,5 @@
         <Button Text="Go to Login"
                 Clicked="Button_Clicked"/>
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>

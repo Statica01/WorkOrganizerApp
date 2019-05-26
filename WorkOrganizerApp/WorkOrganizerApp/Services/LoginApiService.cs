@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Newtonsoft.Json;
@@ -49,19 +48,20 @@ namespace WorkOrganizerApp.Services
             return accessToken;
         }
 
-        public async Task<bool> SignUpUserAsync(string username, string firstname, string lastname, string socialSecurityNumber,
-            string email, string password)
+        public async Task<bool> SignUpUserAsync(string name, string firstname, string lastname, string socialSecurityNumber,
+            string email, string password, string confirmPassword)
         {
             var client = new HttpClient();
 
             var model = new User
             {
-                Username = username,
+                Name = name,
                 Firstname = firstname,
                 Lastname = lastname,
                 SocialSecurityNumber = socialSecurityNumber,
                 Email = email,
                 Password = password,
+                ConfirmPassword = confirmPassword
 
             };
 
